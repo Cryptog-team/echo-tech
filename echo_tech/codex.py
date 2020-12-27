@@ -83,3 +83,59 @@ def show_data(image):
             break
     return decoded_data[:-5]
 
+#############################################
+
+
+def encode_text():
+    """
+    1. Using this function, we insert the message, and the image
+    2. We have used the Cipher code with special key in order to encrypt the message for more security 
+    3. calling the function that will encode the encrypted message inside the image @.@
+    """
+    image_name = input("Insert an image(with the extention):  ") 
+    image = cv2.imread(image_name)  #transforming image into matrix of r,g,b 
+    print('the shape of the image is :', image.shape)
+    data = input('Enter your secret message ^.^')
+    if (len(data) == 0 ):
+        raise ValueError ('there is no message ,, sorry  !!')
+    encrypted_msg = encrypt(data)
+    file_name = input('Enter the name of the new image(with the extention): ')
+    encode_image = encode(image, encrypted_msg)
+    cv2.imwrite(file_name, encode_image)
+
+
+#################################################  
+
+
+def decode_text():
+    """
+    1. using this function, we insert the image tat includes the hidden message
+    2. We call the show_data() to return the hidden and encrypted message 
+    3. We call the decrypt() to return the original message after decrypting it &.&
+    """
+    image_name = input("Insert an image(with the extention) you want to decode:  ") 
+    image = cv2.imread(image_name)  #transforming image into matrix of r,g,b 
+    text = show_data(image)
+    decrypted_msg = decrypt(text) 
+    return decrypted_msg
+
+
+###################################################
+
+def main():
+    a = input("Welcome to our Steganography App ^.^ !! \n \n Please press the number of the task needed \n \n If you want to hide a message kindly press #1 \n \n If you want to reveal the hidden message kindly press #2 \n \n Option Number: ")
+    userinput = int(a)
+    if (userinput == 1):
+        print("\n Encoding..")
+        encode_text()
+    elif (userinput == 2):
+        print("\n Decoding..")
+        print("Decoded message is : " + decode_text())
+    else:
+        raise Exception("Please try again")
+# main()
+password()
+
+
+
+
