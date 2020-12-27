@@ -2,6 +2,20 @@ from echo_tech.cryptography import encrypt,decrypt
 import cv2
 import numpy as np
 import types
+from datetime import date
+
+
+
+today = date.today()
+d1 = today.strftime("%m/%d/%Y")
+def password():
+    password = input ("please enter the password : ")
+    if password == d1 :
+        main()
+        # return "correct password"
+    else :
+        print("incorrect password")
+#####################################################
 
 def messege_to_binary(message):
     """
@@ -68,3 +82,4 @@ def show_data(image):
         if decoded_data[-5:] == "#####":
             break
     return decoded_data[:-5]
+
