@@ -123,7 +123,7 @@ def decode_text():
 ###################################################
 
 def main():
-    a = input("Welcome to our Steganography App ^.^ !! \n \n Please press the number of the task needed \n \n If you want to hide a message kindly press #1 \n \n If you want to reveal the hidden message kindly press #2 \n \n Option Number: ")
+    a = input("Welcome to our Steganography App ^.^ !! ❤️❤️❤️\n \n Please press the number of the task needed \n \n If you want to hide a message kindly press #1 \n \n If you want to reveal the hidden message kindly press #2 \n \n Option Number: ")
     userinput = int(a)
     if (userinput == 1):
         print("\n Encoding..")
