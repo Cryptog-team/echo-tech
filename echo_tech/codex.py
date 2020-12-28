@@ -135,7 +135,3 @@ def main():
         raise Exception("Please try again")
 # main()
 password()
-
-
-
-
