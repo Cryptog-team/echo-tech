@@ -76,3 +76,4 @@ def decrypt(encryptedMsg):
         shifted_text = (index - key) % 26
         decrypted += alphabet[shifted_text]
     return  decrypted
+
