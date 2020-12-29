@@ -52,8 +52,21 @@ def decode_audio():
     decoded = string.split("###")[0]
     # Print the extracted text
     decrypted_msg=decrypt(decoded)
-    print("Sucessfully decoded: "+ decrypted_msg)
+    # print("Sucessfully decoded: "+ decrypted_msg)
     song.close()
-encode_audio()
-decode_audio()
+    return decrypted_msg
+
+def main():
+    a = input("Welcome to our Steganography App ^.^ !! ❤️❤️❤️\n \n Please press the number of the task needed \n \n If you want to hide a message kindly press #1 \n \n If you want to reveal the hidden message kindly press #2 \n \n Option Number: ")
+    userinput = int(a)
+    if (userinput == 1):
+        print("\n Encoding..")
+        encode_audio()
+    elif (userinput == 2):
+        print("\n Decoding..")
+        print("Decoded message is : " + decode_audio())
+    else:
+        raise Exception("Please try again")   
+
+main()
 
