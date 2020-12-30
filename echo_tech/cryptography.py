@@ -16,6 +16,7 @@ def encrypt_AES(msg):
     ciphertext, authTag = aesCipher.encrypt_and_digest(msg)
     return (ciphertext, aesCipher.nonce, authTag)
 
+
 def decrypt_AES(encryptedMsg):
     key =input("Enter yout Key : ")
     if len(key) >0 and len(key) < 17 :
@@ -30,6 +31,7 @@ def decrypt_AES(encryptedMsg):
     plaintext = aesCipher.decrypt_and_verify(ciphertext, authTag)
     plaintext = plaintext.decode('utf-8')
     return plaintext
+
 
 def encrypt(data):
     """
